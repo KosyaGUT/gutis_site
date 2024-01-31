@@ -1,0 +1,64 @@
+body {
+    background: #2c2c2c;
+}
+
+aside {
+    float: left;
+    background: #181818;
+    width: 20%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #fff;
+    border-right: 5px solid #4d4d4d;
+}
+
+aside img {
+    float: left;
+}
+
+aside .logo {
+    font-size: 50px;
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+    top: -5px;
+}
+
+aside h1 {
+    text-align: center;
+}
+
+aside h3 {
+    margin-top: 30px;
+    font-size: 28px;
+}
+
+aside ul {list-style: none;}
+aside ul li {
+    color: #fff;
+    display: black;
+    margin-top: 20px;
+    transition: transform .6s ease;
+    margin-left: -30px;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: #FF7F50;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+aside ul a {
+    text-decoration: none;
+}
+
+main .features {
+    float: left;
+    color: #fff;
+    margin-top: 30px;
+    text-align: justify;
+    width: 78%;
+}
+
+main .features h1 {font-size: 50px;}
+main .features p {max-width: 1500px; margin: 20px auto; font-size: 18px;}
