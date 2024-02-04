@@ -1,64 +1,227 @@
-body {
-    background: #2c2c2c;
-}
-
-aside {
-    float: left;
-    background: #181818;
-    width: 20%;
-    padding: 2.5%;
-    height: 100vh;
-    color: #fff;
-    border-right: 5px solid #4d4d4d;
-}
-
-aside img {
-    float: left;
-}
-
-aside .logo {
-    font-size: 50px;
-    margin-left: 10px;
-    font-weight: bold;
+header {
+    display: flex;
+    align-items: 50%; /* Центрирование по вертикали */
+    background-color: black;
+    justify-content: center; /* Центрирование по горизонтали */
+    height: 3em;
+    box-shadow: 1px 0px 25px rgb(255, 140, 0);
     position: relative;
-    top: -5px;
+    
 }
 
-aside h1 {
+header img {
+    height: 5em;
+    margin-top: -15px;
+    position: fixed;
+    left: 0px;
+}
+
+body {
+    background: #ffffff;
+}
+
+.title_name {
+    color: #ffffff;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.Calendar {
+    position: absolute;
+    right: 20em;
+    top: 50%;
+    transform: translateY(-50%); /* Центрирование по вертикали */
+    width: 13em;
+    height: 3em;
+    background-color: #000000;
     text-align: center;
+    box-shadow: 0px 0px 15px rgba(255, 140, 0, 0.781);
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
 }
 
-aside h3 {
-    margin-top: 30px;
-    font-size: 28px;
+.LMS {
+    position: absolute;
+    left: 20em;
+    top: 50%;
+    transform: translateY(-52%); /* Центрирование по вертикали */
+    width: 13em;
+    height: 3em;
+    background-color: #000000;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(255, 140, 0, 0.781);
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
 }
 
-aside ul {list-style: none;}
-aside ul li {
-    color: #fff;
-    display: black;
-    margin-top: 20px;
-    transition: transform .6s ease;
-    margin-left: -30px;
+.LMS a {
+    font-size: 1.3rem;
+    text-decoration: none; /* Убираем подчёркивание */
+    color: #ffffff; /* Замените "yourDesiredColor" на цвет, который вам нужен */
 }
 
-aside ul li:hover, aside ul a:hover {
-    color: #FF7F50;
-    text-decoration: none;
-    transform: scale(1.05);
-}
-
-aside ul a {
-    text-decoration: none;
+.otstup {
+    margin: 0;
+    padding: 0;
 }
 
 main .features {
-    float: left;
-    color: #fff;
+    color: #000000;
     margin-top: 30px;
     text-align: justify;
     width: 78%;
 }
 
-main .features h1 {font-size: 50px;}
-main .features p {max-width: 1500px; margin: 20px auto; font-size: 18px;}
+main .features h1 {
+    font-size: 50px;
+}
+
+main .features p {
+    max-width: 1500px;
+    margin: 20px auto;
+    font-size: 18px;
+}
+
+.alert-warning {
+    float: left;
+    clear: both;
+    width: 400px;
+    margin: 20px 34%;
+    text-align: left;
+}
+
+/* скрываем чекбокс */
+#menu__toggle {
+    opacity: 0;
+}
+
+/* стилизуем кнопку */
+.menu__btn {
+    display: flex;
+    /* используем flex для центрирования содержимого */
+    align-items: center;
+    /* центрируем содержимое кнопки */
+    position: fixed;
+    top: 0.7em;
+    right: 1em;
+    width: 2em;
+    height: 1.5em;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* добавляем "гамбургер" */
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ff9900;
+}
+
+.menu__btn>span::before {
+    content: '';
+    top: -8px;
+}
+
+.menu__btn>span::after {
+    content: '';
+    top: 8px;
+}
+
+/* контейнер меню */
+.menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #000000;
+    box-shadow: 1px 0px 6px rgb(255, 140, 0);
+}
+
+/* элементы меню */
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: right;
+}
+
+.menu__item:hover {
+    background-color: rgb(255, 140, 0);
+}
+
+#menu__toggle:checked~.menu__btn>span {
+    transform: rotate(45deg);
+}
+
+#menu__toggle:checked~.menu__btn>span::before {
+    top: 0;
+    transform: rotate(0);
+}
+
+#menu__toggle:checked~.menu__btn>span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu__toggle:checked~.menu__box {
+    visibility: visible;
+    right: 0;
+}
+
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
+    transition-duration: .25s;
+}
+
+.menu__box {
+    transition-duration: .25s;
+}
+
+.menu__item {
+    transition-duration: .25s;
+}
+
+.name_menu {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    margin-top: -45px; /* Измените значение на необходимое */
+    margin-right: -80px;
+}
+
+/* Стили для текста с эффектом переливающихся цветов и защитой для эмодзи */
+.shimmer-text {
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff0000, #ff8800, #ae00ff, #00f7ff, #f700ff, #26ff00); /* Градиент цветов, которые будут переливаться */
+    background-size: 200% 200%;
+    color: transparent;
+    background-clip: text;
+    mix-blend-mode: difference; /* Защита для эмодзи */
+    animation: shimmer 5s linear infinite; /* Анимация эффекта переливающихся цветов */
+}
+
+/* Ключевые кадры для анимации */
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}

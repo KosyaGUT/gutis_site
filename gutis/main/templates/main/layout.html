@@ -12,41 +12,72 @@
     </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}" />
-    {% comment %} <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" /> {% endcomment %}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+    <link rel="icon" href="{% static 'main/img/logo.png' %}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static 'main/img/logo.png' %}" type="image/png" />
   </head>
   <body>
-    <aside>
-      <img src="{% static 'main/img/logo.png' %}" alt="Лого" width="70" height="70" />
-      <span class="logo">GUTIS</span>
-      <h3>Навигация</h3>
-      <ul>
-        <a href="{% url 'home' %}">
-          <li>
-            <i class="fas fa-home"></i> Главная
-          </li>
-        </a>
-        <a href="{% url 'about' %}">
-          <li>
-            <i class="fas fa-solid fa-address-card"></i> Про нас
-          </li>
-        </a>
-        <a href="{% url 'news' %}">
-            <li>
-              <i class="fas fa-solid fa-newspaper"></i> Новости
-            </li>
-          </a>
-        <a href="">
-          <li>
-            <i class="fas fa-solid fa-paper-plane"></i> Контакты
-          </li>
-        </a>
+    <header>
+        <a href="https://www.sut.ru/" target="_blank"><img src="{% static 'main/img/sut-logo-orange.png' %}" alt="Логотип СПбГУТ"/></a>
+      {% block header %}
+        <p class="title_name">{{ title }}</p>
+      {% endblock %}
+      <div class="Calendar">
+        <p class="otstup" id="current-date"></p>
+        <p id="semester-info"></p>
+      </div>
+      <div class="LMS">
+        <p class="otstup">СПбГУТ</p>
+        <p>
+          <a href="https://lms.spbgut.ru/login/index.php" target="_blank">🔗LMS СЭО🔗</a>
+        </p>
+      </div>
+    </header>
+    <div class="hamburger-menu">
+      <input id="menu__toggle" type="checkbox" />
+      <label class="menu__btn" for="menu__toggle"><span></span></label>
+      <ul class="menu__box">
+        <p class="name_menu">
+          <b>GUTIS</b>
+        </p>
+        <img src="{% static 'main/img/logo.png' %}" style="width: 80px; height: 80px; margin-top: -120px; margin-right: 155px;" alt="Логотип" />
+        <br />
+        <li>
+          <a class="menu__item" href="{% url 'home' %}">Главная🏠</a>
+        </li>
+        <li>
+          <a class="menu__item" href="{% url 'home' %}">Профиль👤</a>
+        </li>
+        <li>
+          <a class="menu__item" href="#">План на семестр📆</a>
+        </li>
+        <li>
+          <a class="menu__item" href="#">Учебный план📚</a>
+        </li>
+        <li>
+          <a class="menu__item" href="#">Расписание📄</a>
+        </li>
+        <li>
+          <a class="menu__item" href="{% url 'feedback' %}">Отзывы📝</a>
+        </li>
+        <li>
+          <a class="menu__item" href="#">Форум🗣️</a>
+        </li>
+        <li>
+          <a class="menu__item" href="#">Настройки⚙️</a>
+        </li>
+        <br />
+        <br />
+        <li>
+          <a style="text-align: center;" class="menu__item shimmer-text" href="#">💲GUTIS PRO💲</a>
+        </li>
       </ul>
-    </aside>
+    </div>
     <main>
       {% block content %}
 
       {% endblock %}
     </main>
+    <script src="{% static 'main/js/main.js' %}" defer></script>
   </body>
 </html>
