@@ -9,10 +9,10 @@ header {
     
 }
 
-header img {
+header a img {
     height: 5em;
     margin-top: -15px;
-    position: fixed;
+    position: absolute;
     left: 0px;
 }
 
@@ -64,6 +64,8 @@ body {
     margin: 0;
     padding: 0;
 }
+
+
 
 main .features {
     color: #000000;
@@ -224,4 +226,16 @@ main .features p {
     100% {
         background-position: -200% 0;
     }
+}
+
+
+/* Окошко - Карусель */
+.popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; /* задайте нужную ширину */
+    height: 300px; /* задайте нужную высоту */
+    /* Добавьте другие стили по необходимости */
 }
